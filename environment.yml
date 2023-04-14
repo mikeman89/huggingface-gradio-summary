@@ -2,8 +2,8 @@ name: hf-gradio
 channels:
   - defaults
 dependencies:
-  - pip=23.0.1=py311hca03da5_0
-  - python=3.11.2=hc0d8a6c_0
+  - pip
+  - python=3.11.2
   - pip:
       - gradio==3.26.0
       - newspaper3k==0.2.8
