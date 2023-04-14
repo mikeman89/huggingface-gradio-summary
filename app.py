@@ -1,5 +1,4 @@
 import gradio as gr
-from newspaper import Config
 
 from article import extract_article, get_config
 
