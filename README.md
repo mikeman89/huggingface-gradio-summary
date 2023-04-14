@@ -20,7 +20,7 @@ This is a simple Gradio app which loads a [Hugging Face](https://huggingface.co/
     
     Gradio will start a local server with an http link you can click similar to the below.
 
-    Running on local URL:  http://127.0.0.1:7860
+    ```Running on local URL:  http://127.0.0.1:7860```
 
     Your browser should open up the Gradio app, add a news URL in the left box and click "Submit" for the model to summarize the article.
 
