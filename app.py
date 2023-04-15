@@ -2,17 +2,9 @@ import gradio as gr
 
 from article import extract_article, get_config
 
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
-
-config = get_config(USER_AGENT)
-
-
-def extract_article_partial(url: str):
-    return extract_article(config=config, url=url)
-
-
-extractor = gr.Interface(extract_article_partial, "text", "text")
-summarizer = gr.load("huggingface/facebook/bart-large-cnn")
+USER_AGENT = """
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+"""
 
 DESC = """
         Let Hugging Face models summarize articles for you. 
@@ -30,6 +22,18 @@ SAMPLE_URLS = [
         "https://www.technologyreview.com/2021/07/09/1028140/ai-voice-actors-sound-human/"
     ],
 ]
+
+config = get_config(USER_AGENT)
+
+
+def extract_article_partial(url: str):
+    return extract_article(config=config, url=url)
+
+
+extractor = gr.Interface(extract_article_partial, "text", "text")
+summarizer = gr.load("huggingface/facebook/bart-large-cnn")
+
+
 iface = gr.Series(
     extractor,
     summarizer,
