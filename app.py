@@ -2,7 +2,7 @@ import gradio as gr
 
 from article import extract_article, get_config
 
-USER_AGENT = """Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"""
+USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
 
 DESC = """
         Let Hugging Face models summarize articles for you. 
